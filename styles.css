@@ -1,4 +1,9 @@
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
     font-family: 'Arial', sans-serif;
     background-color: #f8f8f8;
     margin: 0;
@@ -8,30 +13,47 @@ body {
 h1 {
     color: #333;
     text-align: center;
+    margin-bottom: 20px;
+}
+
+#searchContainer {
+    display: flex;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+#searchContainer>div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 #searchInput,
 #searchType {
-    display: block;
-    width: 80%;
-    margin: 10px auto;
     padding: 10px;
+    margin-bottom: 5px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button {
-    display: block;
-    width: 80%;
-    margin: 10px auto;
     padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+button img {
+    width: 70px;
+    height: auto;
 }
 
 #recipeContainer {
@@ -48,6 +70,7 @@ button:hover {
     width: calc(33% - 20px);
     margin: 10px;
     padding: 20px;
+    border-radius: 5px;
     text-align: center;
 }
 
@@ -55,4 +78,18 @@ button:hover {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none;
+    background-color: red;
+}
+
+.info {
+    background-color: red;
+    width: 100px;
+    text-align: justify;
+    text-justify: inter-word;
 }

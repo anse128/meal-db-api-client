@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Recetas con The Meal DB API</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
 </head>
+
 <body>
     <h1>Buscador de Recetas</h1>
-    <input type="text" id="searchInput" placeholder="Ingresa el nombre de un plato">
-    <button onclick="searchRecipe()">Buscar</button>
+    <div id="searchContainer">
+        <div>
+            <input type="text" id="searchInput" placeholder="Ingresa el nombre de un plato">
+            <select id="searchType" onchange="changeInputPlaceholder()">
+                <option value="meal">Nombre del plato</option>
+                <option value="ingredient">Ingrediente principal</option>
+                <option value="category">Categoría</option>
+                <option value="area">Área (nacionalidad)</option>
+            </select>
+        </div>
+        <button onclick="searchRecipe()">
+            <img src="media/busqueda-de-lupa.png" />
+        </button>
+    </div>
 
-    <select id="searchType" onchange="changeInputPlaceholder()">
-        <option value="meal">Nombre del plato</option>
-        <option value="ingredient">Ingrediente principal</option>
-        <option value="category">Categoría</option>
-        <option value="area">Área (nacionalidad)</option>
-    </select>
-
-    <div id="recipeContainer"></div>
-
-    <!-- Referencia al archivo JavaScript externo -->
-    <script src="script.js"></script>
+    <div id="recipeContainer" ></div>    
+    
 </body>
+
 </html>
